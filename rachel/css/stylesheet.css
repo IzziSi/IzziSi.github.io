@@ -236,3 +236,7 @@ address {
         float: none;
     }
 }
+
+footer {
+    margin: 20px;
+}
