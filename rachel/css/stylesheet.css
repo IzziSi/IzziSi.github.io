@@ -1,0 +1,238 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: auto;
+}
+
+li {
+    display: inline;
+}
+
+li a,
+a {
+    display: inline-block;
+    color: slategrey;
+    font-size: large;
+    text-align: center;
+    padding: 5px 11px;
+    text-decoration: none;
+}
+
+a:hover:not(.active) {
+    background-color: #1a1a1a;
+}
+
+.active {
+    background-color: aliceblue;
+}
+
+#myMainTopnav {
+    vertical-align: text-top;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: text-top;
+    font-family: 'Lato', sans-serif;
+    font-size: large;
+}
+
+.topnav>li {
+    flex: 1;
+}
+
+p,
+body {
+    color: silver;
+    font-family: 'Lato', sans-serif;
+    background: black;
+}
+
+#mainPageTitle {
+    background-color: transparent;
+    color: #bfbfbf;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+}
+
+.secondaryPage {
+    background-image: url("../images/images00.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+address {
+    font-size: large;
+    text-align: center;
+}
+
+.innerBody {
+    background-color: black;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: -1vh;
+    margin-bottom: -10vh;
+}
+
+.indexPhotoContainer {
+    width: 100%;
+}
+
+.indexPhoto {
+    width: 100%;
+}
+
+#aboutMeImg {
+    width: 100%;
+}
+
+.aboutMeInfo {
+    text-indent: 10px;
+}
+
+.mainPage {
+    background-color: black;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+@media screen and (max-width:1200px) {
+    .mainPage {
+        background-color: black;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .innerBody {
+        background-color: black;
+        margin-right: 20%;
+        margin-left: 20%;
+        margin-top: -1vh;
+        margin-bottom: -10vh;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .mainPage {
+        background-color: black;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    body {
+        font-size: 12px;
+    }
+    li a,
+    a {
+        display: inline-block;
+        color: slategrey;
+        font-size: small;
+        text-align: center;
+        padding: 5px 11px;
+        text-decoration: none;
+    }
+    .innerBody {
+        background-color: black;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-top: -1vh;
+        margin-bottom: -10vh;
+    }
+}
+
+.galleryContainer {
+    margin-top: 50px;
+    height: 800px;
+    width: 500px;
+    background: black;
+    color: lightgray;
+}
+
+.galleryScreen {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.photoSection {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftScroll,
+.rightScroll {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-chevron-right,
+.fa-chevron-left {
+    font-size: 2rem;
+}
+
+.thumbnail {
+    height: 150px;
+    vertical-align: top;
+    float: none;
+}
+
+.galleryThumbnail {
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.mainPhoto {
+    display: none;
+    visibility: hidden;
+    max-width: 400px;
+}
+
+#one {
+    display: block;
+    visibility: visible;
+}
+
+@media screen and (max-width: 640px) {
+    
+.galleryScreen {
+    display: none;
+    visibility: hidden;
+}
+    .galleryContainer {
+        height: 500px;
+        width: 100%;
+        background: black;
+        color: lightgray;
+        margin-bottom: 50px;
+    }
+    .mainPhoto {
+        display: none;
+        visibility: hidden;
+        max-width: 250px;
+    }
+    .galleryThumbnail {
+        overflow: hidden;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .photoSection {
+        display: none;
+        visibility: hidden;
+    }
+    .thumbnail {
+        height: 400px;
+        vertical-align: top;
+        float: none;
+    }
+}

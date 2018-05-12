@@ -1,0 +1,127 @@
+html, body {
+  height: 100%;
+  position: relative;
+  font-family: 'Rozha One', serif;
+  font-size: 25px;
+  color: lightgray;
+  z-index: -1;
+  background-color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1, h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 36px;
+}
+.portfolioWebsites {
+  text-align: center;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+  
+
+nav {
+ width: 100%;
+ text-align: right;
+ padding-right: 10px;
+ z-index: 1;
+}
+  
+.webpageimg {
+  min-height: 90%;
+}
+
+a {
+  padding: 10px;
+}
+
+/* 
+Index page
+*/
+
+canvas {
+  position: fixed;
+  height: 800px;
+  width: 100%;
+  z-index: -1;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+.indexbody {
+  min-height: 90vh;
+}
+
+
+h2 {
+  padding-left: 2em;
+}
+
+.photo {
+  border-width: 3px 3px 3px 0;
+  border-style: solid;
+  -webkit-border-image: 
+    -webkit-linear-gradient(left, #26557F, rgba(0, 0, 0, 0)) 1 100%;
+  -moz-border-image:
+    -moz-linear-gradient(left, #26557F, rgba(0, 0, 0, 0)) 1 100%; 
+  -o-border-image:
+    -o-linear-gradient(left, #26557F, rgba(0, 0, 0, 0)) 1 100%;
+  border-image:
+    linear-gradient(to left, #26557F, rgba(0, 0, 0, 0)) 1 100%;     
+  
+}
+
+
+/*
+Portfolio page
+*/
+
+.webpageimage {
+  display: flex;
+ flex-wrap: wrap;
+}
+
+.portlink {
+  font-size: 2rem;
+ text-align: center;
+ align-items: center;
+ flex: 1;
+}
+
+figcaption {
+  height: 3em;
+}
+
+
+.nonnacontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.roccocontainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.saloncontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

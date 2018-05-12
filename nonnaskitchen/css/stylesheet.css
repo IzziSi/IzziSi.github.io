@@ -1,0 +1,94 @@
+/* downloads font for use from file, so that it should load 
+on devices that lack the font */
+
+@font-face {
+    font-family:ForeverBrushScript;
+    src: url(ForeverBrushScriptDemo.ttf);
+}
+
+@font-face {
+    font-family:PersonalUse_Monoment;
+    src: url(PersonalUse_Monoment.ttf);
+}
+
+/* calls upon the new font-family */
+h1, h2 {font-family:ForeverBrushScript;
+font-size: xx-large;}
+
+body {
+    background-image: url("ingredients.jpg");
+    background-size: cover;
+    font-family: Berlin Sans FB, Calibri
+}
+
+a:link {color: sandybrown;}
+a:visited {color:darksalmon;}
+a:hover {color: antiquewhite;}
+a:active {color: tan;}
+
+
+
+/* centers the menu, and makes the menu and contents see-through */
+#menu {
+    width:40%;
+    min-height:100vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    opacity: .9;
+    color: tan;
+text-align: center;
+}
+
+
+.aboutnonna {
+    position: relative;
+    width:40%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    opacity: .9;
+    color: tan;
+text-align: center;
+    overflow: auto;
+}
+
+li {list-style: none;
+}
+
+span {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+  width: 3em;
+  background-color: black;
+  border-radius: 20%;
+}
+
+@media screen and (max-width: 500px) {
+    nav {float: left;
+    margin: 0px;
+        padding: 0px;
+    top: 20;}
+        }
+
+
+@media screen and (max-width: 1023px) {
+    nav {float: left;
+        overflow: auto;
+    left: 0px;
+    top: 20;}
+        }
+@media screen and (min-width: 1024px) {
+    nav {position: fixed;
+        width: 20%;
+    height: 100%;
+    overflow: auto;
+    left: 180px;
+    top: 30;} }
+
+

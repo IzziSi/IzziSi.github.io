@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>
+                Calculator
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body>
+        <div class="calculator">
+                                <div class="screen">
+                        <form>
+                                <input type="text" id="input" readonly>
+                        </form>
+                        </div>
+                <div class="row">
+                        <div>
+                                <button type="button" onclick="inputOperator('%')" id="modulus">%</button>
+                        </div>
+                        <div >
+                                <button type="button" onclick="inputOperator('/')" id="divide">/</button>
+                        </div>
+                        <div >
+                                <button type="button" onclick="inputOperator('*')" id="multiply">*</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="delButton()" id="delete"><i class="fas fa-long-arrow-alt-left"></i></button>
+                        </div>
+                </div>
+                <div class="row">
+                        <div>
+                                <button type="button" onclick="inputNumber('7')" id="seven">7</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="inputNumber('8')" id="eight">8</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="inputNumber('9')" id="nine">9</button>
+                        </div>
+                        <div>
+                        <button type="button" onclick="inputOperator('+')" id="add">+</button>
+                        </div>
+                </div>
+                <div class="row">
+                        <div>
+                                <button type="button" onclick="inputNumber('4')" id="four">4</button>
+                        </div>
+
+                        <div>
+                                <button type="button" onclick="inputNumber('5')" id="five">5</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="inputNumber('6')" id="six">6</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="inputOperator('-')" id="minus">-</button>
+                        </div>
+                </div>
+                <div class="row">
+                        <div>
+                                <button type="button" onclick="inputNumber('1')" id="one">1</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="inputNumber('2')" id="two">2</button>
+                        </div>
+
+                        <div>
+                                <button type="button" onclick="inputNumber('3')" id="three">3</button>
+                        </div>
+
+                        <div>
+                                <button type="button" onclick="inputNumber('.')" id="period">.</button>
+                        </div>
+
+                </div>
+                <div class="row">
+                        <div>
+                                <button type="button" id="clear" onclick="clearedresults()">C</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="inputNumber('0')" id="zero">0</button>
+                        </div>
+                        <div>
+                                <button type="button" onclick="evaluated()" id="equal">=</button>
+                        </div>
+                </div>
+                <script src="js/script.js"></script>
+        </body>
+                
+</html>
