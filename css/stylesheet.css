@@ -110,6 +110,7 @@ figcaption {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .roccocontainer {
@@ -117,6 +118,7 @@ figcaption {
   flex-direction: row-reverse;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .saloncontainer {
@@ -124,4 +126,14 @@ figcaption {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
 }
+
+.dramaticllamacontainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+

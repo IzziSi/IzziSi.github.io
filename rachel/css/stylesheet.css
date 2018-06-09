@@ -190,6 +190,9 @@ address {
     overflow: hidden;
     overflow-x: scroll;
     white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    
 }
 
 .mainPhoto {
