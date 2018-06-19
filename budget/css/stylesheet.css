@@ -1,0 +1,47 @@
+body {
+    background-color: lightslategray;
+    font-family: 'Philosopher', sans-serif;
+}
+
+
+
+#btn {
+    display: flex;
+    height: 50px;
+}
+
+button,
+input {
+    height: 25px;
+    margin: 10px;
+}
+
+#calculateBtn {
+    width: 150px;
+}
+
+.category {
+    margin: 5px;
+    padding: 0px;
+    background-color: lightsteelblue;
+    min-width: 30%;
+    max-width: 800px;
+}
+
+.catInput, .billInput, .miscExpInput, .addBudgetInput,
+ .BudgetExpenseInput {
+    width: 15%;
+    margin: 2px;
+    height: 20px;
+    display: none;
+    visibility: hidden;
+}
+
+table {
+    width: 100%;
+}
+tr {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+}
