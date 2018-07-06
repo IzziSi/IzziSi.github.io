@@ -1,26 +1,23 @@
 const billsTable = document.getElementById('billsTable');
 const miscExpTable = document.getElementById('miscExpenseTable');
 const budgetTable = document.getElementById('budgetGoalsTable');
+const balanceTable = document.getElementById('balanceTable');
 const addSelect = document.getElementById('addSelect');
-const budgetExpenses = document.getElementById('budgetExpensesTable');
 const sum = document.getElementById('summaryTable');
 const misc = document.getElementById('miscExpenseTable');
 const calculateExpenses = document.getElementById('calculateBtn');
 let addSelectOption = addSelect.selectedIndex;
-let billsTitleStored = JSON.parse(localStorage.getItem('billsTitleData'));
-let billsDueStored = JSON.parse(localStorage.getItem('billsDueData'));
-let billsAmountStorage = JSON.parse(localStorage.getItem('billsAmountData'));
-let miscExpTitleStored = JSON.parse(localStorage.getItem('miscExpTitleData'));
-let miscExpDateStored = JSON.parse(localStorage.getItem('miscExpDateData'));
-let miscExpPayStored = JSON.parse(localStorage.getItem('miscExpPayData'));
-let budgetTitleStored = JSON.parse(localStorage.getItem('budgetTitleData'));
-let budgetAmountStored = JSON.parse(localStorage.getItem('budgetAmountData'))
+let billsStored = JSON.parse(localStorage.getItem('billsData'));
+let miscExpStored = JSON.parse(localStorage.getItem('miscExpData'));
+let budgetStored = JSON.parse(localStorage.getItem('budgetData'));
+let balanceGroup = []
+let balanceRow = 1;
 let billRow = 1;
 let miscExpRow = 1;
 let budgetRow = 1;
 let name, date, amount;
 
-//create insertBudgetExpense() make insertbudget save
+
 
 function cellInput(tableName, nameItem, dateItem, payItem, rowVar) {
     let row = tableName.insertRow(rowVar);
@@ -80,8 +77,6 @@ function selectOptionAdd() {
         showInput('miscExpInput')
     } else if (document.getElementById("addBudget").selected) {
         showInput('addBudgetInput')
-    } else if (document.getElementById("addBudgetExpense").selected) {
-        showInput('BudgetExpenseInput')
     } else {}
 }
 
@@ -127,86 +122,86 @@ function saveData() {
     let billsTitle = document.querySelectorAll('.nameOfBill');
     let billsDue = document.querySelectorAll('.billDateDue');
     let billsPay = document.querySelectorAll('.amountToPay');
-    let billsTitleStorage = [];
-    let billsPayStorage = [];
-    let billsDueStorage = [];
+    let billsStorage = [];
     let miscExpTitle = document.querySelectorAll('.nameMiscExp');
     let miscExpDate = document.querySelectorAll('.dateMiscExp');
     let miscExpPay = document.querySelectorAll('.amountMiscExp');
-    let miscExpTitleStorage = [];
-    let miscExpDateStorage = [];
-    let miscExpPayStorage = [];
+    let miscExpStorage = [];
     let budgetTitle = document.querySelectorAll('.nameOfBudget');
     let budgetAmount = document.querySelectorAll('.budgetAmount');
-    let budgetTitleStorage = [];
-    let budgetAmountStorage = [];
+    let budgetStorage = [];
+
     for (let i = 0; i < budgetTitle.length; i++) {
-        budgetTitleStorage.push(budgetTitle[i].innerText);
-        budgetAmountStorage.push(budgetAmount[i].innerText);
-         console.log('pushed');
+        budgetStorage.push({
+            name: budgetTitle[i].innerText,
+            amount: budgetAmount[i].innerText
+        });
+
     }
     for (let i = 0; i < billsTitle.length; i++) {
-        billsTitleStorage.push(billsTitle[i].innerText);
-        billsDueStorage.push(billsDue[i].innerText);
-        billsPayStorage.push(billsPay[i].innerText);
+        billsStorage.push({
+            name: billsTitle[i].innerText,
+            date: billsDue[i].innerText,
+            amount: billsPay[i].innerText
+        });
     }
     for (let i = 0; i < miscExpTitle.length; i++) {
-        miscExpTitleStorage.push(miscExpTitle[i].innerText);
-        miscExpDateStorage.push(miscExpDate[i].innerText);
-        miscExpPayStorage.push(miscExpPay[i].innerText);
+        miscExpStorage.push({
+            name: miscExpTitle[i].innerText,
+            date: miscExpDate[i].innerText,
+            amount: miscExpPay[i].innerText
+        });
     }
-    localStorage.setItem("budgetTitleData", JSON.stringify(budgetTitleStorage));
-    localStorage.setItem("budgetAmountData", JSON.stringify(budgetAmountStorage));
-    localStorage.setItem("billsTitleData", JSON.stringify(billsTitleStorage));
-    localStorage.setItem("billsDueData", JSON.stringify(billsDueStorage));
-    localStorage.setItem("billsAmountData", JSON.stringify(billsPayStorage));
-    localStorage.setItem('miscExpTitleData', JSON.stringify(miscExpTitleStorage));
-    localStorage.setItem('miscExpDateData', JSON.stringify(miscExpDateStorage));
-    localStorage.setItem('miscExpPayData', JSON.stringify(miscExpPayStorage));
+
+    localStorage.setItem("budgetData", JSON.stringify(budgetStorage));
+    localStorage.setItem("billsData", JSON.stringify(billsStorage));
+    localStorage.setItem('miscExpData', JSON.stringify(miscExpStorage));
     billShowTotal();
-    miscExpShowTotal()
-    /* location.reload(); */
+    miscExpShowTotal();
+    location.reload();
 
 }
 
 function onScreenLoad() {
-    if (budgetTitleStored !== null) {
-        for (let i = 0; i < budgetTitleStored.length; i++) {
+    if (budgetStored !== null) {
+        for (let i = 0; i < budgetStored.length; i++) {
             let row = budgetTable.insertRow(budgetRow);
             let cell = row.insertCell(0);
             let cell2 = row.insertCell(1);
             budgetRow++;
-            cell.innerHTML = budgetTitleStored[i];
-            cell2.innerHTML = budgetAmountStored[i];
+            cell.innerHTML = budgetStored[i].name;
+            cell2.innerHTML = budgetStored[i].amount;
             cell.classList.add('nameOfBudget');
             cell2.classList.add('budgetAmount');
         }
     }
-    if (billsTitleStored !== null) {
-        for (let i = 0; i < billsTitleStored.length; i++) {
+
+    if (billsStored !== null) {
+        for (let i = 0; i < billsStored.length; i++) {
             let row = billsTable.insertRow(billRow);
             let cell = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
             billRow++;
-            cell.innerHTML = billsTitleStored[i];
-            cell2.innerHTML = billsDueStored[i];
-            cell3.innerHTML = billsAmountStorage[i];
+            cell.innerHTML = billsStored[i].name;
+            cell2.innerHTML = billsStored[i].date;
+            cell3.innerHTML = billsStored[i].amount;
             cell.classList.add('nameOfBill');
             cell2.classList.add('billDateDue');
             cell3.classList.add('amountToPay');
         }
     }
-    if (miscExpTitleStored !== null) {
-        for (let i = 0; i < miscExpTitleStored.length; i++) {
+
+    if (miscExpStored !== null) {
+        for (let i = 0; i < miscExpStored.length; i++) {
             let row = miscExpTable.insertRow(miscExpRow);
             let cell = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
             miscExpRow++;
-            cell.innerHTML = miscExpTitleStored[i];
-            cell2.innerHTML = miscExpDateStored[i];
-            cell3.innerHTML = miscExpPayStored[i];
+            cell.innerHTML = miscExpStored[i].name;
+            cell2.innerHTML = miscExpStored[i].date;
+            cell3.innerHTML = miscExpStored[i].amount;
             cell.classList.add('nameMiscExp');
             cell2.classList.add('dateMiscExp');
             cell3.classList.add('amountMiscExp');
@@ -214,24 +209,25 @@ function onScreenLoad() {
     }
 }
 
-
 function billShowTotal() {
-    if (billsTitleStored !== null) {
+    if (billsStored !== null) {
         let total = 0;
-        for (let i = 0; i < billsAmountStorage.length; i++) {
-            total = total + parseInt(billsAmountStorage[i]);
+        for (let i = 0; i < billsStored.length; i++) {
+            total = total + parseFloat(billsStored[i].amount);
             document.getElementById('billTotalBal').innerHTML = total;
         }
+        document.getElementById('billTotalBal').innerHTML = total;
     }
 }
 
 function miscExpShowTotal() {
-    if (miscExpTitleStored !== null) {
+    if (miscExpStored !== null) {
         let total = 0;
-        for (let i = 0; i < miscExpPayStored.length; i++) {
-            total = total + parseInt(miscExpPayStored[i]);
+        for (let i = 0; i < miscExpStored.length; i++) {
+            total = total + parseFloat(miscExpStored[i].amount);
             document.getElementById('miscExpTotalBal').innerHTML = total;
         }
+        document.getElementById('miscExpTotalBal').innerHTML = total;
     }
 }
 
@@ -239,6 +235,48 @@ function clearData() {
     localStorage.clear();
     location.reload();
 }
-miscExpShowTotal()
+//make array of just category names
+//for each unique push to array
+//google filter(), map, reduce
+//make budget
+//match names to call filter to budget category
+//whatever doesnt get filtered gets pulled to misc cat
+function calculateExpensesBtn() {
+    let makeNew = 0;
+    for (let i = 0; i < budgetStored.length; i++) {
+        for (let index = 0; index < miscExpStored.length; index++) {
+            if (budgetStored[i].name == miscExpStored[index].name) {
+                for (let checkBal = 0; checkBal < balanceGroup.length; checkBal++) {
+                    console.log('button pressed');
+                    if (budgetStored[i].name == miscExpStored[index].name == balanceGroup.name[checkBal]) {
+                        let balTotal = balanceGroup[checkBal].amount - miscExpStored[index].amount;
+                        balanceGroup.amount = balTotal;
+                        console.log('matched');
+                    };
+                }
+            } else {
+                makeNew++; 
+                console.log(makeNew)
+            }
+            if (makeNew > 0) {
+                let nameOfBudget = budgetStored[i].name;
+                //fix [index] issue 
+                let total = budgetStored[i].amount - miscExpStored[index].amount;
+                balanceGroup.push({
+                    name: nameOfBudget,
+                    amount: total
+                });
+                makeNew = 0;
+                console.log(balanceGroup);
+            } 
+        }
+    }
+}
+
+
+
+
+miscExpShowTotal();
 billShowTotal();
+miscExpShowTotal();
 onScreenLoad();
