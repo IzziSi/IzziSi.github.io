@@ -3,14 +3,13 @@ const miscExpTable = document.getElementById('miscExpenseTable');
 const budgetTable = document.getElementById('budgetGoalsTable');
 const balanceTable = document.getElementById('balanceTable');
 const addSelect = document.getElementById('addSelect');
-const sum = document.getElementById('summaryTable');
 const misc = document.getElementById('miscExpenseTable');
 const calculateExpenses = document.getElementById('calculateBtn');
 let addSelectOption = addSelect.selectedIndex;
 let billsStored = JSON.parse(localStorage.getItem('billsData'));
 let miscExpStored = JSON.parse(localStorage.getItem('miscExpData'));
 let budgetStored = JSON.parse(localStorage.getItem('budgetData'));
-let balanceGroup = []
+let balanceGroup = [];
 let balanceRow = 1;
 let billRow = 1;
 let miscExpRow = 1;
@@ -42,12 +41,33 @@ function insertBudget() {
     cell2.innerHTML = amount;
     cell.classList.add('nameOfBudget');
     cell2.classList.add('budgetAmount');
-    budgetRow++
+    budgetRow++;
     document.getElementById('budgetName').value = '';
     document.getElementById('budgetAmount').value = '';
     cancel('addBudgetInput');
     saveData();
+}
 
+function insertBalance() {
+    let balanceSummary = budgetStored.filter(() => budgetStored);
+
+    for (let i = 0; i < balanceSummary.length; i++) {
+        let filter = billsStored.filter(bill => {
+            console.log(bill.name==balanceSummary[i].name);
+    })}
+    for (let i = 0; i < balanceSummary.length; i++) {
+        name = balanceSummary[i].name;
+        amount = balanceSummary[i].amount;
+        let row = balanceTable.insertRow(balanceRow);
+        var cell = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell.innerHTML = name;
+        cell2.innerHTML = amount;
+        cell.classList.add('nameOfBalance');
+        cell2.classList.add('balanceAmount');
+        budgetRow++;
+
+    }
 }
 
 function insertBill() {
@@ -55,7 +75,7 @@ function insertBill() {
     date = document.getElementById('billDate').value;
     amount = document.getElementById('billAmount').value;
     cellInput(billsTable, 'nameOfBill', 'billDateDue', 'amountToPay', billRow);
-    billRow++
+    billRow++;
     hideInput('billName', 'billDate', 'billAmount', 'billInput');
     saveData();
 }
@@ -65,7 +85,7 @@ function insertMiscExp() {
     date = document.getElementById('miscExpDate').value;
     amount = document.getElementById('miscExpAmount').value;
     cellInput(miscExpTable, 'nameMiscExp', 'dateMiscExp', 'amountMiscExp', miscExpRow);
-    miscExpRow++
+    miscExpRow++;
     hideInput('miscExpName', 'miscExpDate', 'miscExpAmount', 'miscExpInput');
     saveData();
 }
@@ -241,37 +261,6 @@ function clearData() {
 //make budget
 //match names to call filter to budget category
 //whatever doesnt get filtered gets pulled to misc cat
-function calculateExpensesBtn() {
-    let makeNew = 0;
-    for (let i = 0; i < budgetStored.length; i++) {
-        for (let index = 0; index < miscExpStored.length; index++) {
-            if (budgetStored[i].name == miscExpStored[index].name) {
-                for (let checkBal = 0; checkBal < balanceGroup.length; checkBal++) {
-                    console.log('button pressed');
-                    if (budgetStored[i].name == miscExpStored[index].name == balanceGroup.name[checkBal]) {
-                        let balTotal = balanceGroup[checkBal].amount - miscExpStored[index].amount;
-                        balanceGroup.amount = balTotal;
-                        console.log('matched');
-                    };
-                }
-            } else {
-                makeNew++; 
-                console.log(makeNew)
-            }
-            if (makeNew > 0) {
-                let nameOfBudget = budgetStored[i].name;
-                //fix [index] issue 
-                let total = budgetStored[i].amount - miscExpStored[index].amount;
-                balanceGroup.push({
-                    name: nameOfBudget,
-                    amount: total
-                });
-                makeNew = 0;
-                console.log(balanceGroup);
-            } 
-        }
-    }
-}
 
 
 
