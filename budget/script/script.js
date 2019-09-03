@@ -446,12 +446,12 @@ document.querySelector(".downloadCSV").addEventListener("click", function () {
 	exportTableToCsv(html, "table.csv");
 });
 
-
-
 function clearData() {
     localStorage.clear();
     location.reload();
 }
+
+
 
 miscExpShowTotal();
 billShowTotal();

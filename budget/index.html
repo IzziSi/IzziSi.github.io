@@ -59,7 +59,7 @@
                         <span id="billTotalBal"></span>
                     </p>
                     <input type="text" pattern="[A-Za-z]" class="billInput" placeholder="Name" id="billName">
-                    <input type="text" class="billInput" placeholder="Due date" id="billDate">
+                    <input type="date" class="billInput" placeholder="Due date" id="billDate">
                     <input type="text" class="billInput" placeholder="Amount" id="billAmount">
                     <button type="button" class="billInput" onclick="insertBill()">Submit</button>
                     <button type="submit" class="billInput" onclick="cancel('billInput')">Cancel</button>
@@ -79,7 +79,7 @@
                         <span id="miscExpTotalBal"></span>
                     </p>
                     <input type="text" class="miscExpInput" placeholder="Name" id="miscExpName">
-                    <input type="text" class="miscExpInput" placeholder="Date" id="miscExpDate">
+                    <input type="date" class="miscExpInput" placeholder="Date" id="miscExpDate">
                     <input type="text" class="miscExpInput" placeholder="Amount" id="miscExpAmount">
                     <button type="submit" class="miscExpInput" onclick="insertMiscExp()">Submit</button>
                     <button type="submit" class="miscExpInput" onclick="cancel('miscExpInput')">Cancel</button>
@@ -101,7 +101,11 @@
                 </div>
             </div>
         </div>
-        <button class="downloadCSV">Export Budget</button>
+        <button class="downloadCSV">Export Budget</button> 
+<!--        <form action="">
+            <input type="file" name="pdf" accept="file_extension">
+            <input type="submit">
+        </form> -->
     </main>
     <script src="script/script.js"></script>
 </body>
