@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css"
+    "\\css",
+    "\\nonnaskitchen\\css",
+    "\\roccorestaurant\\css",
+    "\\roccorestaurant\\images"
   ],
   "SelectedNode": "\\css\\stylesheet.css",
   "PreviewInSolutionExplorer": false
