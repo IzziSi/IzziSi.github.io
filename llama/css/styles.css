@@ -1,0 +1,144 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+} 
+
+main {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+}
+
+.container-fluid {
+    height: 40vh;
+    padding: 0;
+}
+
+.gallery {
+width: 100%;
+height: 100%;
+background-color: white;
+}
+
+
+.fa-chevron-right, .fa-chevron-left {
+    font-size: 3rem;
+    text-shadow: 2px 2px lightgray;
+}
+
+.screen {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.images {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.rightbutton, .leftbutton {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#intro, .intro {
+    position: absolute;
+    z-index: 2;
+    background-color: black;
+    opacity: .5;
+    color: grey
+}
+
+.intro {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.rightbutton {
+ right: 0;
+}
+
+#firstPhoto {
+    transform: translateY(-150);
+}
+
+#secondPhoto {
+transform: translateY(-150);
+display: none;
+visibility: hidden;
+} 
+
+
+
+
+@media screen and (max-width: 990) { 
+
+    .container-fluid {
+        height: 30vh;
+        padding: 0;
+    }
+    #firstPhoto {
+        transform:translateY(-50);
+        } 
+}
+@media screen and (max-width: 700) { 
+    .intro, #intro {
+        font-size: 2.5vh;
+    }
+    main {
+        font-size: 1.5vh;
+    }
+    .container-fluid {
+        height: 30vh;
+        padding: 0;
+    }
+    #firstPhoto{
+        transform:none;    
+    } 
+}
+
+
+/**
+ green color:rgba(85, 183, 78, 1)
+Food page:
+ **/
+
+ header {
+     color: rgba(85, 183, 78, 1);
+    margin: 2px;
+    margin-right: 15px;
+    padding: 5px;
+ }
+ .blog {
+     width: 100%;
+ }
+
+ #introSections {
+     text-align: center;
+ }
+
+ /** Blog **/
+ #storyIntro {
+     padding-left: 1em;
+
+ }
+.emptyspace {
+    width:500px;
+}
+ #introduction {
+     border: 1px solid rgba(85, 183, 78, 1);
+ }
