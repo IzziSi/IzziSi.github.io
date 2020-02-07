@@ -7,9 +7,12 @@ html, body {
   z-index: -1;
   background-color: black;
 }
+.imgWidth {
+    width: 38vw;
+}
 
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 h1, h2 {
@@ -69,21 +72,6 @@ h2 {
   padding-left: 2em;
 }
 
-.photo {
-  border-width: 3px 3px 3px 0;
-  border-style: solid;
-  -webkit-border-image: 
-    -webkit-linear-gradient(left, #26557F, rgba(0, 0, 0, 0)) 1 100%;
-  -moz-border-image:
-    -moz-linear-gradient(left, #26557F, rgba(0, 0, 0, 0)) 1 100%; 
-  -o-border-image:
-    -o-linear-gradient(left, #26557F, rgba(0, 0, 0, 0)) 1 100%;
-  border-image:
-    linear-gradient(to left, #26557F, rgba(0, 0, 0, 0)) 1 100%;     
-  
-}
-
-
 /*
 Portfolio page
 */
@@ -94,15 +82,15 @@ Portfolio page
 }
 
 .portlink {
-  font-size: 2rem;
+  font-size: 5vh;
  text-align: center;
  align-items: center;
  flex: 1;
 }
 
-figcaption {
+/*figcaption {
   height: 3em;
-}
+}*/
 
 
 .nonnacontainer {

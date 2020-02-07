@@ -1,17 +1,19 @@
 
 @font-face {
-    font-family:ForeverBrushScript;
-    src: url(ForeverBrushScriptDemo.ttf);
+    font-family: ForeverBrushScript;
+    src: url(ForeverBrushScriptDemo.ttf) format('truetype');
 }
 
 @font-face {
-    font-family:PersonalUse_Monoment;
-    src: url(PersonalUse_Monoment.ttf);
+    font-family: PersonalUse_Monoment;
+    src: url(PersonalUse_Monoment.ttf) format('truetype');
 }
 
 
-h1, h2 {font-family:ForeverBrushScript;
-font-size: xx-large;}
+h1, h2 {
+    font-family: ForeverBrushScript;
+    font-size: xx-large;
+}
 
 body {
     background-image: url("ingredients.jpg");
@@ -19,28 +21,46 @@ body {
     font-family: Berlin Sans FB, Calibri
 }
 
-a:link {color: sandybrown;}
-a:visited {color:darksalmon;}
-a:hover {color: antiquewhite;}
-a:active {color: tan;}
+a:link {
+    color: sandybrown;
+}
 
+a:visited {
+    color: darksalmon;
+}
+
+a:hover {
+    color: antiquewhite;
+}
+
+a:active {
+    color: tan;
+}
+
+.imgNonna, .imgRestaurant {
+    width: 70%;
+}
+
+.imgFood {
+    width: 40%;
+}
 
 #menu {
-    width:40%;
-    min-height:100vh;
+    width: 40%;
+    min-height: 100vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
     background-color: black;
     opacity: .9;
     color: tan;
-text-align: center;
+    text-align: center;
 }
 
 
 .aboutnonna {
     position: relative;
-    width:40%;
+    width: 40%;
     height: 100%;
     display: block;
     margin-left: auto;
@@ -48,43 +68,77 @@ text-align: center;
     background-color: black;
     opacity: .9;
     color: tan;
-text-align: center;
+    text-align: center;
     overflow: auto;
 }
 
-li {list-style: none;
+li {
+    list-style: none;
 }
 
-span {
-     display: flex;
+.dot {
+    display: flex;
     align-items: center;
+    margin-bottom:50px;
     justify-content: center;
     height: 3em;
-  width: 3em;
-  background-color: black;
-  border-radius: 20%;
+    width: 10vh;
+    background-color: black;
+    border-radius: 20%;
 }
 
 @media screen and (max-width: 500px) {
-    nav {float: left;
-    margin: 0px;
-        padding: 0px;
-    top: 20;}
-        }
-
-
-@media screen and (max-width: 1023px) {
-    nav {float: left;
+    nav {
+        float: left;
+        margin: 0;
+        padding: 0;
+        top: 20px;
+    }
+    .aboutnonna {
+        position: relative;
+        width: 65%;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: black;
+        opacity: .9;
+        color: tan;
+        text-align: center;
         overflow: auto;
-    left: 0px;
-    top: 20;}
-        }
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    nav {
+        float: left;
+        overflow: auto;
+        left: 0;
+        top: 20px;
+    }
+    .aboutnonna {
+        position: relative;
+        width: 65%;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: black;
+        opacity: .9;
+        color: tan;
+        text-align: center;
+        overflow: auto;
+    }
+}
+
 @media screen and (min-width: 1024px) {
-    nav {position: fixed;
+    nav {
+        position: fixed;
         width: 20%;
-    height: 100%;
-    overflow: auto;
-    left: 180px;
-    top: 30;} }
-
-
+        height: 100%;
+        overflow: auto;
+        left: 180px;
+        top: 30px;
+    }
+}
