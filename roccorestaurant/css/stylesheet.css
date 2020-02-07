@@ -8,9 +8,9 @@ body {
 }
 
 nav {
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 00px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
     padding: 10px;
     background-color: #3f0101;
 }
@@ -34,9 +34,9 @@ small {
 
 .title {
     text-align: center;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
     padding: 10px;
     background-color: #3f0101;
     font-family: 'Della Respira', serif;
@@ -154,7 +154,7 @@ address,
     padding: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500) {
     
 a:link {
     color: rgb(202, 235, 217);
