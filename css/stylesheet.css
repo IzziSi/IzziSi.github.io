@@ -71,6 +71,15 @@ canvas {
 h2 {
   padding-left: 2em;
 }
+.resumeContainer {
+    display:flex;
+    flex-direction:row;
+    text-align:center;
+    justify-content:center; /*fix text so that this is properly centered */
+}
+footer {
+    max-width: 480px;
+}
 
 /*
 Portfolio page
