@@ -10,6 +10,7 @@ package mentorbudget;
  * @author izzis
  */
 public class User {
+    public String username;
     private int userID;
     private int mentorID;
     private int budgetID;
