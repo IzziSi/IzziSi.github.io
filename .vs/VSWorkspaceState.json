@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\dramaticllama"
+    "\\css",
+    "\\llama\\vendor\\bootstrap",
+    "\\llama\\vendor\\bootstrap\\css",
+    "\\llama\\vendor\\bootstrap\\js"
   ],
-  "SelectedNode": "\\portfolio.html",
+  "SelectedNode": "\\css\\stylesheet.css",
   "PreviewInSolutionExplorer": false
 }
