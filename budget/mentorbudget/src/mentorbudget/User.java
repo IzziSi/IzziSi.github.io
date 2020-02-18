@@ -11,9 +11,18 @@ package mentorbudget;
  */
 public class User {
     public String username;
+    private String password;
     private int userID;
     private int mentorID;
     private int budgetID;
+    
+    public void setPassword(String pw) {
+        this.password = pw;
+    }
+    
+    public int getPassword() {
+        return this.password
+    }
     
     public void setUserID(int id) {
         this.userID = id;

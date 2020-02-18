@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css",
-    "\\llama\\vendor\\bootstrap",
-    "\\llama\\vendor\\bootstrap\\css",
-    "\\llama\\vendor\\bootstrap\\js"
+    "\\js"
   ],
-  "SelectedNode": "\\css\\stylesheet.css",
+  "SelectedNode": "\\js\\script.js",
   "PreviewInSolutionExplorer": false
 }
