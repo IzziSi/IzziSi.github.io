@@ -51,12 +51,14 @@ a {
 /* 
 Index page
 */
-
+.italics {
+    font-style:italic;
+}
 canvas {
-  position: fixed;
-  height: 800px;
-  width: 100%;
-  z-index: -1;
+    position: fixed;
+    height: 800px;
+    width: 100%;
+    z-index: -1;
 }
 
 .container-fluid {
