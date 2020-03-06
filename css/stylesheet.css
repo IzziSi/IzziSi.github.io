@@ -73,9 +73,9 @@ h2 {
 }
 .resumeContainer {
     display:flex;
-    flex-direction:row;
-    text-align:center;
-    justify-content:center; /*fix text so that this is properly centered */
+    flex-direction: column;
+    text-align:start;
+    justify-content:flex-start; /*fix text so that this is properly centered */
 }
 footer {
     max-width: 480px;
