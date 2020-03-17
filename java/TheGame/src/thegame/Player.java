@@ -36,7 +36,6 @@ public class Player {
         age = 16;
         roomNum = 1;
         description = "stands here.";
-        System.out.println("I am here!");
     }
     
     public void setFirstName(String name) {
@@ -252,9 +251,9 @@ public class Player {
         Room.look(currentRoom);
     }
      
-     public void beginGame(JTextField inputScreen) {
+     public void beginGame() {
         Scanner input = new Scanner(System.in);
-        inputScreen.setText("Type 'New' to create a new character or type your first and last name to log in.");
+        //inputScreen.setText("Type 'New' to create a new character or type your first and last name to log in.");
         System.out.println("Type 'New' to create a new character or type your first and last name to log in.");
         String playerInput = input.nextLine();
         
@@ -264,7 +263,7 @@ public class Player {
             String[] fullName = playerInput.split(" ");
             for (String name : fullName) {
                 System.out.println("Name: " + name);
-                inputScreen.setText("Name: " + name);
+                //inputScreen.setText("Name: " + name);
                 //Temp work around til adding in a database
             }
         }

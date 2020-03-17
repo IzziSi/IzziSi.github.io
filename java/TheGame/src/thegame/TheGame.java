@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package thegame;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Container;
+//import java.awt.BorderLayout;
+//import java.awt.Color;
+//import java.awt.Container;
 import java.util.Scanner;
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+//import javax.swing.JFrame;
+//import javax.swing.JTextArea;
+//import javax.swing.JTextField;
 
 
 
@@ -34,17 +34,13 @@ public class TheGame {
     
     
     public static void main(String[] args) {
-        Window window = new Window();
-        
-
-    }
-    
-    public TheGame() {
-       
+//        Window window = new Window();
+         
         
         Player currentPlayer = new Player();
         currentPlayer.beginGame();
-    }
 
+    }
+    
 }
     
