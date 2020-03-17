@@ -13,7 +13,7 @@
         'Output: [1,2]
         'Explanation: The sum Of 2 And 7 Is 9. Therefore index1 = 1, index2 = 2.
 
-        Dim sortedarray As Integer() = {2, 7, 11, 15}
+        Dim sortedarray As Integer() = {0, 1, 2, 7, 11, 15}
         Dim num As Integer = 9
         FindArraySumIndex(sortedarray, num)
 
@@ -22,7 +22,27 @@
     Protected Sub FindArraySumIndex(ByVal sortArray As Integer(), ByVal num As Integer)
         Dim index1 As Integer
         Dim index2 As Integer
+        Dim currentIndex As Integer = 0
+        Dim currentIndex2 As Integer = 1
 
+        While index1 + index2 <> num
+            If sortArray.Length < currentIndex2 Then
+                Exit While
+            End If
+
+            If sortArray(currentIndex) + sortArray(currentIndex2) = num Then
+                Console.WriteLine("This worked! Index 1: " & currentIndex & " and index 2: " & currentIndex2)
+                Exit While
+            Else
+                currentIndex2 = currentIndex2 + 1
+                If currentIndex2 >= sortArray.Length Then
+                    currentIndex = currentIndex + 1
+                    currentIndex2 = currentIndex + 1
+                End If
+                Console.WriteLine("Looping! Index 1: " & currentIndex & " and index 2: " & currentIndex2)
+            End If
+
+        End While
 
 
     End Sub
