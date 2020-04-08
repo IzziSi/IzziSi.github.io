@@ -1,0 +1,16 @@
+.wallpaper {
+    visibility:hidden;
+    display: none;
+}
+
+body {
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-color:black;
+    
+    
+}
+#img-container {
+    width: 100%;
+    height:100%;
+}
