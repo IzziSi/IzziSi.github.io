@@ -1,0 +1,117 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.basil"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:5:5-52:19
+12        android:allowBackup="true"
+12-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.2.0] C:\Users\izzis\.gradle\caches\transforms-2\files-2.1\4f3d7d743df13c1af889a0942a35670d\core-1.2.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+20-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:11:9-65
+21        <activity android:name="com.example.basil.MainActivity" >
+21-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:12:9-18:20
+21-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:12:19-47
+22            <intent-filter>
+22-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:13:13-17:29
+23                <action android:name="android.intent.action.MAIN" />
+23-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:17-69
+23-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:25-66
+24
+25                <category android:name="android.intent.category.LAUNCHER" />
+25-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:17-77
+25-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:27-74
+26            </intent-filter>
+27        </activity>
+28        <activity android:name="com.example.basil.CreateGardenOptionsActivity" >
+28-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:19:9-24:20
+28-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:19:19-62
+29            <intent-filter>
+29-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:13:13-17:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:17-69
+30-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:17-77
+32-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:27-74
+33            </intent-filter>
+34        </activity>
+35        <activity android:name="com.example.basil.MainOptionsActivity" >
+35-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:25:9-31:20
+35-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:25:19-54
+36            <intent-filter>
+36-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:13:13-17:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:17-69
+37-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:17-77
+39-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:27-74
+40            </intent-filter>
+41        </activity>
+42        <activity android:name="com.example.basil.CreateGardenActivity" >
+42-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:32:9-37:20
+42-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:32:19-55
+43            <intent-filter>
+43-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:13:13-17:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:17-69
+44-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:17-77
+46-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:27-74
+47            </intent-filter>
+48        </activity>
+49        <activity android:name="com.example.basil.ViewGardenActivity" >
+49-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:38:9-43:20
+49-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:38:19-53
+50            <intent-filter>
+50-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:13:13-17:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:17-69
+51-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:25-66
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:17-77
+53-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:27-74
+54            </intent-filter>
+55        </activity>
+56        <activity android:name="com.example.basil.GardenSelectionActivity" >
+56-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:44:9-50:20
+56-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:44:19-58
+57            <intent-filter>
+57-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:13:13-17:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:17-69
+58-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:14:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:17-77
+60-->C:\Users\izzis\Desktop\Basil\app\src\main\AndroidManifest.xml:16:27-74
+61            </intent-filter>
+62        </activity>
+63    </application>
+64
+65</manifest>
