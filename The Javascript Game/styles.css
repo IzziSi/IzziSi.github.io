@@ -1,0 +1,21 @@
+#divBody, #textOutput {
+    background-color: black;
+    height: 500px;
+    width: 1000px;
+    color: white;
+}
+
+#textOutput {
+    white-space: pre-wrap;
+}
+
+#divTextInput {
+    vertical-align: bottom;
+}
+
+#textInput {
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    min-width: 995px;
+}
