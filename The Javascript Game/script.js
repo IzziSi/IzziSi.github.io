@@ -1,16 +1,60 @@
+/** Map **/
+const area = {
+    mountains,
+    portals,
+    caves
+}
+
+// const portals {
+//     1:
+//     2:
+// }
+const caves = {
+    1:{
+        title:"You stand in front of a dark leaky cavern.",
+        exits:{"east"}
+    },
+    2:{
+        title:"The entrance of a leaky cavern.",
+        exits:"east"
+    },
+    3:{
+        title:"Deep in a leaky cavern.",
+        exits:
+    },
+    4:{
+        titles:"A winding tunnel.",
+        exits:
+    },
+    5:{
+        title:"A dead end.",
+        exits:
+}
+
+const mountains = {
+    1:"The entrance of a vast luminous forest.",
+    2:"Curving climbing plants dangle among the trees here.",
+    3:"An ominous clearing.",
+    4:"A magical mushroom circle.",
+    5:"A cliff among the trees.",
+}
+
+
+
+/**Set up **/
 const textOutput = document.getElementById("textOutput");
 const textInput = document.getElementById("textInput");
 const paragraph = document.createElement("p");
 let username = "";
 let character = {};
-let stage = 1;
+let stage = 1; //The stage dictates where in the storyline/storybuild the character is
 let node = document.createTextNode('Welcome to The Game.');
-
 paragraph.appendChild(node);
 textOutput.appendChild(paragraph);
 node = document.createTextNode("\nPlease insert a name.");
 paragraph.appendChild(node);
 
+//function to enter text into output and clear input textbox
 textInput.addEventListener('keydown', (e)=>{
     if (e.code === "Enter") {
         const input = document.getElementById("textInput");
@@ -19,15 +63,15 @@ textInput.addEventListener('keydown', (e)=>{
     }
 })
 
-//Populate class list and abilities
-//populate weapon list
-//populate gear
-//populate enemies
-//populate mini-map
-//populate areas - 2 areas, 5 rooms each, different types of enemies
-
-
-
+/** TODO
+*Populate class list and abilities
+*Attack timer - for gnome, for character
+*populate weapon list
+*populate gear
+*populate enemies gnomes vs orcs
+*populate mini-map
+*populate areas - 2 areas, 5 rooms each, different types of enemies
+**/
 
 function action(e) {
     switch (stage) {
@@ -43,23 +87,51 @@ function action(e) {
         case 2:
             if (e.code === "Enter") {   
                 const input = document.getElementById("textInput");
-                character.class = input.value;
+                let findClass = input.value;
+                /** Build the character class **/
+                switch (findClass.toLowerCase()) {
+                    case "mage":
+                        character.class = "Mage";
+                        character.skills = {
+                            fire: "You mumble under your lips as fire flies from your pointed finger at your target.",
+                            water: "Your arm begins to tremble as water flies from your pointed finger at your target.",
+                            air: "Wind rips into your target as you scream at them."
+                          };
+                          stage=3;
+                    break;
+                    case "thief":
+                        stage=3;
+                        break;
+                    case "fighter":
+                        stage=3;
+                        break;
+                    case "cleric":
+                        stage=3;
+                        break;
+                        default:
+                            textOutput.append('\nWhat is your class? \n Fighter, Cleric, Mage, Thief');
+                            stage=2;
+                            break;
+                }               
                 input.value = '';
                 character.leftHand = "nothing";
                 character.rightHand = "nothing";
                 character.inventory = "Empty";
                 character.clothes = "You are naked.";
+                character.balance = true;
                 character.age = 18;
-                textOutput.append("Welcome " + character.name + ". You are a " + character.class + 
-                " and are " + character.age + " years old. You are wielding "
-                + character.leftHand + " in your left hand. You are wielding " + character.rightHand + 
-                " in your right hand.");
-                stage=3;
+                character.roomID = 1;
+                
             }
             break;
         case 3:
-            
+            textOutput.append("Welcome " + character.name + ". You are a " + character.class + 
+                " and are " + character.age + " years old. You are wielding "
+                + character.leftHand + " in your left hand. You are wielding " + character.rightHand + 
+                " in your right hand.");
+                
             break;
-        
+            
+            
      }
 }
