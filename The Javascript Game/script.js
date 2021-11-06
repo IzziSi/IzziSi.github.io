@@ -1,42 +1,60 @@
 /** Map **/
 const area = {
     mountains,
-    portals,
     caves
-}
+};
 
-// const portals {
-//     1:
-//     2:
-// }
 const caves = {
     1:{
         title:"You stand in front of a dark leaky cavern.",
-        exits:{"east"}
+        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
     },
     2:{
         title:"The entrance of a leaky cavern.",
-        exits:"east"
+        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
     },
     3:{
         title:"Deep in a leaky cavern.",
-        exits:
+        exits:{north:false,south:false,east:false,west:true,northeast:false,southeast:true,northwest:false,southwest:false}
     },
     4:{
         titles:"A winding tunnel.",
+        exits:{north:false,south:false,east:false,west:false,northeast:false,southeast:false,northwest:true,southwest:true}
+    },
+    5:{
+        title:"Nearing a dead end.",
+        exits:{north:false,south:false,east:false,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
+    },
+    6:{
+        title:"A dead end.",
+        exits:{north:false,south:false,east:true,west:false,northeast:false,southeast:false,northwest:false,southwest:false}
+    }
+};
+
+const mountains = {
+    1:{
+        title:"The entrance of a vast luminous forest.",
+        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
+    },
+    2:{
+        title:"Curving climbing plants dangle among the trees here.",
+        exits:
+    },
+    3:{
+        title:"An ominous clearing.",
+        exits:
+    },
+    4:{
+        title:"A magical mushroom circle.",
         exits:
     },
     5:{
-        title:"A dead end.",
+        title:"A cliff among the trees.",
+    },
+    6:{
+        title:"The edge of a cliff.",
         exits:
-}
-
-const mountains = {
-    1:"The entrance of a vast luminous forest.",
-    2:"Curving climbing plants dangle among the trees here.",
-    3:"An ominous clearing.",
-    4:"A magical mushroom circle.",
-    5:"A cliff among the trees.",
+    }
 }
 
 
@@ -121,7 +139,8 @@ function action(e) {
                 character.balance = true;
                 character.age = 18;
                 character.roomID = 1;
-                
+                character.health = 100;
+                character.mana = 100;
             }
             break;
         case 3:
