@@ -1,59 +1,67 @@
 /** Map **/
-const area = {
-    mountains,
-    caves
-};
-
-const caves = {
+const rooms = {
     1:{
         title:"You stand in front of a dark leaky cavern.",
-        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
-    },
+        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false},
+        areatype: "caves"
+    },//west (to mountains),east
     2:{
         title:"The entrance of a leaky cavern.",
-        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
-    },
+        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false},
+        areatype: "caves"
+    },//east,west
     3:{
         title:"Deep in a leaky cavern.",
-        exits:{north:false,south:false,east:false,west:true,northeast:false,southeast:true,northwest:false,southwest:false}
-    },
+        exits:{north:false,south:false,east:false,west:true,northeast:false,southeast:true,northwest:false,southwest:false},
+        areatype: "caves"
+    },//west,southeast
     4:{
         titles:"A winding tunnel.",
-        exits:{north:false,south:false,east:false,west:false,northeast:false,southeast:false,northwest:true,southwest:true}
-    },
+        exits:{north:false,south:false,east:false,west:false,northeast:false,southeast:false,northwest:true,southwest:true},
+        areatype: "caves"
+    },//northwest,southwest
     5:{
         title:"Nearing a dead end.",
-        exits:{north:false,south:false,east:false,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
-    },
+        exits:{north:false,south:false,east:false,west:true,northeast:true,southeast:false,northwest:false,southwest:false},
+        areatype: "caves"
+    },//northeast,west
     6:{
         title:"A dead end.",
-        exits:{north:false,south:false,east:true,west:false,northeast:false,southeast:false,northwest:false,southwest:false}
-    }
-};
-
-const mountains = {
-    1:{
+        exits:{north:false,south:false,east:true,west:false,northeast:false,southeast:false,northwest:false,southwest:false},
+        areatype: "caves"
+    },//east
+    7:{
         title:"The entrance of a vast luminous forest.",
-        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false}
-    },
-    2:{
+        exits:{north:false,south:false,east:true,west:true,northeast:false,southeast:false,northwest:false,southwest:false},
+        areatype:"mountains"
+    },//west - east(to caves)
+    8:{
         title:"Curving climbing plants dangle among the trees here.",
-        exits:
-    },
-    3:{
+        exits:{north:false,south:true,east:true,west:false,northeast:false,southeast:false,northwest:false,southwest:false},
+        areatype:"mountains"
+    }, //south - east
+    9:{
         title:"An ominous clearing.",
-        exits:
+        exits:{north:true,south:false,east:false,west:false,northeast:false,southeast:true,northwest:false,southwest:false},
+        areatype:"mountains"
+        //north, southeast
     },
-    4:{
+    10:{
         title:"A magical mushroom circle.",
-        exits:
+        exits:{north:false,south:false,east:false,west:false,northeast:false,southeast:false,northwest:true,southwest:true},
+        areatype:"mountains"
+        //southwest, northwest
     },
-    5:{
+    11:{
         title:"A cliff among the trees.",
-    },
-    6:{
+        exits:{north:false,south:true,east:false,west:false,northeast:true,southeast:false,northwest:false,southwest:false},
+        areatype:"mountains"
+    },//south, northeast
+    12:{
         title:"The edge of a cliff.",
-        exits:
+        exits:{north:true,south:false,east:false,west:false,northeast:false,southeast:false,northwest:false,southwest:false},
+        areatype:"mountains"
+        //north
     }
 }
 
@@ -87,7 +95,6 @@ textInput.addEventListener('keydown', (e)=>{
 *populate weapon list
 *populate gear
 *populate enemies gnomes vs orcs
-*populate mini-map
 *populate areas - 2 areas, 5 rooms each, different types of enemies
 **/
 
@@ -105,19 +112,42 @@ function action(e) {
         case 2:
             if (e.code === "Enter") {   
                 const input = document.getElementById("textInput");
-                let findClass = input.value;
-                /** Build the character class **/
-                switch (findClass.toLowerCase()) {
+                /** Build the character class. skills: description, damage.
+                 * consider crit rate, damage per gear **/
+                switch (input.value.toLowerCase()) {
                     case "mage":
                         character.class = "Mage";
                         character.skills = {
-                            fire: "You mumble under your lips as fire flies from your pointed finger at your target.",
-                            water: "Your arm begins to tremble as water flies from your pointed finger at your target.",
-                            air: "Wind rips into your target as you scream at them."
+                            fire: {
+                                description:"You mumble under your lips as fire flies from your pointed finger at your target.",
+                                damage:10
+                            },
+                            water: {
+                                description:"Your arm begins to tremble as water flies from your pointed finger at your target.",
+                                damage:10
+                            },
+                            air: {
+                                description:"Wind rips into your target as you scream at them.",
+                                damage:10
+                            }
                           };
                           stage=3;
                     break;
                     case "thief":
+                    character.skills = {    
+                        pickpocket: {
+                            description:"You brush your arm across your target as you bump into them slightly, retrieving an object.",
+                            damage:0
+                        },
+                        backstab: {
+                            description:"Sliding behind your target you quickly jab you knife through their back.",
+                            damage:10
+                        },
+                        throw: {
+                            description:"You throw " + character.leftHand + " at a your target.",
+                            damage:0 //the damage is dependent on the item thrown
+                        }
+                    };
                         stage=3;
                         break;
                     case "fighter":
@@ -148,7 +178,13 @@ function action(e) {
                 " and are " + character.age + " years old. You are wielding "
                 + character.leftHand + " in your left hand. You are wielding " + character.rightHand + 
                 " in your right hand.");
-                
+                stage=4;
+            break;
+        default:
+            switch(input.value.toLowerCase()) {
+                case "look": 
+                case "east":
+            }
             break;
             
             
