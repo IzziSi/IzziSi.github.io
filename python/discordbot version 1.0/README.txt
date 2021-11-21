@@ -1,0 +1,1 @@
+Removed .env file. Requires to connect to twitch and discord
