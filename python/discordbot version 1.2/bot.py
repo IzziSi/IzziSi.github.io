@@ -80,6 +80,9 @@ else:
         guild= bot.get_guild(835500063609323550)#Make sure this is only in The Scrap Yard server
         authorname=guild.get_member(message.author.id)
         channel = message.channel
+        print(authorname)
+        print(channel)
+        #print(message.channel.id)
         if message.author.bot:
             return
         else:
@@ -141,14 +144,50 @@ else:
                             break
             await bot.process_commands(message)
 
-    #@bot.event
-    #async def on_message_edit(before, after):
-    #    print(before.content) #if using before.id with string, convert id to string 
-    #    print(after.content) #str(before.id)
-
-    #@bot.event
-    #async def on_message_delete(message):
-     #   channel = bot.get_channel(message.channel.id)
-      #  if channel == 123456:
-       #     print(message.auther+ " deleted " + message)
+    @bot.command(name="printshouts", help="record viewers, title, game")
+    @commands.has_any_role("Bawks Role", "👑 Scraplord", "👑 Scraplady", "Scrap Guards", "Scrap Guard Apprentices")
+    async def printOneWeek(ctx):
+        if ctx.channel.id != 911321358120652830:
+            return
+        dbcursor = cnx.cursor()
+        sql = "select shoutoutid, StreamerName, GameName, Shouter, Views, date_time from Shoutouts where date_time between NOW() - interval 7 day and now()"
+        dbcursor.execute(sql)
+        results = dbcursor.fetchall()
+        if results is None:
+            bot.send("Found nothing. Consult Bawksy")
+        else:
+            file = open("weekOne.txt", "w")
+            shoutOutLines = []
+            viewerLines = []
+            countline=0
+            for row in results:
+                if countline==0:
+                        file.write("shoutoutid, StreamerName, GameName, Shouter, Views, date_time, Viewers\n")
+                        countline=1
+                shoutOutID= row[0]
+                streamerName=row[1]
+                gameName=row[2]
+                shouter=row[3]
+                views=row[4]
+                date_Time=row[5]
+                sql2 = "select viewer from shoutdetails where shoutoutid = %s"
+                val2=(shoutOutID,)
+                dbcursor.execute(sql2,val2)
+                twitchViewers = dbcursor.fetchall()
+                buildUsers =""
+                if twitchViewers is None:
+                    bot.send("Found no twitch viewers. Consult Bawksy")
+                else:
+                    for viewer in twitchViewers:
+                        buildUsers = buildUsers + str(viewer) + " "
+                removeChars = ["'",",","(",")"]
+                for characters in removeChars:
+                    buildUsers= buildUsers.replace(characters, '')
+                shoutOutLines.append((str(shoutOutID)+ "," + str(streamerName) + "," + str(gameName) + "," + str(shouter) + 
+                    "," + str(views) + "," + str(date_Time) + "," + str(buildUsers) + "\n"))
+            for sentence in shoutOutLines:
+                file.write(sentence)
+            file.close()
+            with open("weekOne.txt", "rb") as file:
+                await ctx.send("A list of the last week's shouts: ", file=discord.File(file, "weekOne.txt"))
     bot.run(TOKEN)
