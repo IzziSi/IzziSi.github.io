@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/IzziSi.github.io/static/css/main.cce48c61.css",
+    "main.js": "/IzziSi.github.io/static/js/main.6672fa93.js",
+    "static/js/787.755d6b54.chunk.js": "/IzziSi.github.io/static/js/787.755d6b54.chunk.js",
+    "static/media/self.jpeg": "/IzziSi.github.io/static/media/self.4287b8b1b0843cb7cbd3.jpeg",
+    "index.html": "/IzziSi.github.io/index.html",
+    "main.cce48c61.css.map": "/IzziSi.github.io/static/css/main.cce48c61.css.map",
+    "main.6672fa93.js.map": "/IzziSi.github.io/static/js/main.6672fa93.js.map",
+    "787.755d6b54.chunk.js.map": "/IzziSi.github.io/static/js/787.755d6b54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cce48c61.css",
+    "static/js/main.6672fa93.js"
+  ]
+}
